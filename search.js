@@ -1,10 +1,21 @@
+
+
+let param = new URLSearchParams(window.location.search)
+let query = param.get("q");
+
+
 fetch("https://dummyjson.com/products")
   .then(res => res.json())
   .then(data => {
     let products = data.products;
+    let filtered = products.filter((p) => {
+        return p.title.toLocaleLowerCase().includes(query.toLocaleLowerCase());
+    })
+
+
     let container = document.getElementById("prod");
 
-    products.forEach(product => {
+    filtered.forEach(product => {
       
       let card = document.createElement("div");
       card.className = "card";
@@ -28,22 +39,3 @@ fetch("https://dummyjson.com/products")
   .catch(err => console.log(err));
 
 
-
-
-// Searching
-
-const searchBtn = document.getElementById("searchBtn");
-const searchInput = document.getElementById("searchInput");
-
-searchBtn.addEventListener("click", () => {
-  const query = searchInput.value;
-  console.log(query)
-  if(!query) return;
-
-  // Save to localStorage
-
-
-  // Redirect with query param
-  window.location.href = `search.html?q=${encodeURIComponent(query)}`
-  searchInput.value="";
-})
