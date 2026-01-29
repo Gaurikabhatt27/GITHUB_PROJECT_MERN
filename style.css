@@ -1,5 +1,6 @@
 body {
   font-family: Arial;
+  background-color: rgb(241, 244, 244);
 }
 
 #prod {
@@ -9,13 +10,27 @@ body {
 }
 
 .card {
-  border: 1px solid #ccc;
+  border: 1px solid grey;
   padding: 10px;
   border-radius: 8px;
+  background-color: white;
 }
 
 .card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+#searchBtn:hover{
+  background-color: rgb(198, 224, 246);
+  border: 1px solid grey;
+  cursor: pointer;
+  border-radius: 2px;
 }
