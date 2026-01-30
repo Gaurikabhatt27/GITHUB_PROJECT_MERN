@@ -23,6 +23,25 @@ fetch("https://dummyjson.com/products")
       card.appendChild(price);
 
       container.appendChild(card);
+      card.addEventListener("click", () => {
+        console.log("Card clicked", product.id);
+        let history = JSON.parse(localStorage.getItem("viewHistory")) || [];
+        // history = history.filter(item => item.toLowerCase() !== query.toLowerCase());
+
+        // const exists = history.some(
+        //   item => item.query.toLowerCase() === query.toLowerCase()
+        // );
+
+      
+          history.push({
+            productId:product.id,
+            time: Date.now()
+          })
+          localStorage.setItem("viewHistory", JSON.stringify(history));
+        
+         
+        window.location.href = `product.html?id=${product.id}`;
+      });
     });
   })
   .catch(err => console.log(err));
