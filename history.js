@@ -23,3 +23,8 @@ history.forEach(item => {
 
     container.appendChild(div)
 })
+
+
+function clearHistory(){
+    localStorage.removeItem('searchHistory');
+}
