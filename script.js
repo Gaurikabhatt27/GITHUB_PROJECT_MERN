@@ -47,7 +47,9 @@ function renderPage(){
 
         if(!exists){
             history.push({
-              productId:product.id,
+              id: product.id,
+              title: product.title,
+              thumbnail: product.thumbnail,
               time: Date.now()
             })
             localStorage.setItem("viewHistory", JSON.stringify(history));
