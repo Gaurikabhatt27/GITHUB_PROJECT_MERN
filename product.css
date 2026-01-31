@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f4f6f8;
+    background-color: #f0f8ff;;
     padding: 50px;
     color: #333;
 }
@@ -23,7 +23,7 @@ h1 {
     margin: auto;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 25px rgba(0, 123, 255, 0.25);
     overflow: hidden;
 }
 

@@ -140,3 +140,13 @@ searchInput.addEventListener("input", () => {
   });
 });
 
+// Close suggestions when clicking outside
+document.addEventListener("click", (event) => {
+    if (!searchInput.contains(event.target) && !suggestionBox.contains(event.target)) {
+        suggestionBox.innerHTML = "";
+    }
+});
+
+searchInput.addEventListener("focus", () => {
+    searchInput.dispatchEvent(new Event("input"));
+});

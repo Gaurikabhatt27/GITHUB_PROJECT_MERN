@@ -1,13 +1,14 @@
 body {
   font-family: Arial;
-  background-color: rgb(241, 244, 244);
+  background-color: #f0f8ff;
   padding: 20px;
 }
 
 .pagination {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
@@ -22,6 +23,8 @@ body {
   padding: 10px;
   border-radius: 8px;
   background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 50, 0.05);
 }
 
 .card img {
@@ -31,24 +34,15 @@ body {
 }
 
 .card:hover {
-    /* transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); */
     cursor: pointer;
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-#searchBtn:hover{
-  background-color: rgb(198, 224, 246);
-  border: 1px solid grey;
-  cursor: pointer;
-  border-radius: 2px;
+    box-shadow: 0 12px 25px rgba(0, 123, 255, 0.25);
 }
 
 /* Suggestion box styling */
 #suggestions {
     position: absolute;
-    width: 205px;
+    width: 222px;
     top: 100%;
     left: 0;
     right: 0;
@@ -93,6 +87,66 @@ body {
   width: 200px;
 }
 
-.SEARCH_BOX #HistBtn{
-  width: 50px;
+#suggestions:empty {
+    display: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* --- Input Box Styling --- */
+#searchInput {
+  width: 200px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Blue outline/glow when typing */
+#searchInput:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Target all buttons in the search bar and pagination */
+button, 
+#searchBtn {
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: 1px solid #d1d9e0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.25s ease; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure links inside buttons don't look like default links */
+button a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+/* THE HOVER EFFECT: Blue shadow and blue text/border */
+button:hover, 
+#searchBtn:hover {
+  background-color: #f0f7ff;       
+  border-color: #007bff;           
+  color: #007bff;                  
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Active state for when the button is clicked */
+button:active {
+  transform: translateY(0);
+  background-color: #e2efff;
 }
