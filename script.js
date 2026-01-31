@@ -53,7 +53,7 @@ function renderPage(){
             localStorage.setItem("viewHistory", JSON.stringify(history));
         }
         
-            window.location.href = `../product.html?id=${product.id}`;
+            window.location.href = `product.html?id=${product.id}`;
         });
         container.appendChild(card);
     });
